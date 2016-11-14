@@ -1,12 +1,12 @@
 <?php
 
-namespace johnpbloch\Composer;
+namespace mikelking\Composer;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
 use Composer\Plugin\PluginInterface;
 
-class WordPressCorePlugin implements PluginInterface {
+class WordPressConfigPlugin implements PluginInterface {
 
 	/**
 	 * Apply plugin modifications to composer
@@ -15,7 +15,7 @@ class WordPressCorePlugin implements PluginInterface {
 	 * @param IOInterface $io
 	 */
 	public function activate( Composer $composer, IOInterface $io ) {
-		$installer = new WordPressCoreInstaller( $io, $composer );
+		$installer = new WordPressConofigInstaller( $io, $composer );
 		$composer->getInstallationManager()->addInstaller( $installer );
 	}
 

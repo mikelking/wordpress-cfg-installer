@@ -5,9 +5,9 @@ namespace johnpbloch\Composer;
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 
-class WordPressCoreInstaller extends LibraryInstaller {
+class WordPressConfigInstaller extends LibraryInstaller {
 
-	const TYPE = 'wordpress-core';
+	const TYPE = 'wordpress-config';
 
 	private static $_installedPaths = array();
 
@@ -19,19 +19,19 @@ class WordPressCoreInstaller extends LibraryInstaller {
 		$prettyName      = $package->getPrettyName();
 		if ( $this->composer->getPackage() ) {
 			$topExtra = $this->composer->getPackage()->getExtra();
-			if ( ! empty( $topExtra['wordpress-install-dir'] ) ) {
-				$installationDir = $topExtra['wordpress-install-dir'];
+			if ( ! empty( $topExtra['wordpress-root-install-dir'] ) ) {
+				$installationDir = $topExtra['wordpress-root-install-dir'];
 				if ( is_array( $installationDir ) ) {
 					$installationDir = empty( $installationDir[$prettyName] ) ? false : $installationDir[$prettyName];
 				}
 			}
 		}
 		$extra = $package->getExtra();
-		if ( ! $installationDir && ! empty( $extra['wordpress-install-dir'] ) ) {
-			$installationDir = $extra['wordpress-install-dir'];
+		if ( ! $installationDir && ! empty( $extra['wordpress-root-install-dir'] ) ) {
+			$installationDir = $extra['wordpress-root-install-dir'];
 		}
 		if ( ! $installationDir ) {
-			$installationDir = 'wordpress';
+			$installationDir = 'wproot';
 		}
 		if (
 			! empty( self::$_installedPaths[$installationDir] ) &&
