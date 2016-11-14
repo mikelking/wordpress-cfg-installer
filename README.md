@@ -11,7 +11,7 @@ To set up a custom WordPress build package to use this as a custom installer, ad
 ```
 "type": "wordpress-config",
 "require": {
-	"mikelking/wordpress-config-installer": "~0.1"
+	"mikelking/wordpress-config-installer": "0.2.3"
 }
 ```
 
@@ -39,7 +39,9 @@ wproot/wordpress/
     │   ├── wp-admin
     │   ├── wp-content
     │   ├── wp-include
+
 ...
+
     │   └── xmlrpc.php
 ```
 
