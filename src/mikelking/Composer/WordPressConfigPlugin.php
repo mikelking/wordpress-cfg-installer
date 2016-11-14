@@ -15,7 +15,7 @@ class WordPressConfigPlugin implements PluginInterface {
 	 * @param IOInterface $io
 	 */
 	public function activate( Composer $composer, IOInterface $io ) {
-		$installer = new WordPressConofigInstaller( $io, $composer );
+		$installer = new WordPressConfigInstaller( $io, $composer );
 		$composer->getInstallationManager()->addInstaller( $installer );
 	}
 

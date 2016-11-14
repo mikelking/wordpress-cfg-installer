@@ -1,6 +1,6 @@
 <?php
 
-namespace johnpbloch\Composer;
+namespace mikelking\Composer;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
