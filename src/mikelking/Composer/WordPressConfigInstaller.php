@@ -19,16 +19,16 @@ class WordPressConfigInstaller extends LibraryInstaller {
 		$prettyName      = $package->getPrettyName();
 		if ( $this->composer->getPackage() ) {
 			$topExtra = $this->composer->getPackage()->getExtra();
-			if ( ! empty( $topExtra['wordpress-root-install-dir'] ) ) {
-				$installationDir = $topExtra['wordpress-root-install-dir'];
+			if ( ! empty( $topExtra['wordpress-config-install-dir'] ) ) {
+				$installationDir = $topExtra['wordpress-config-install-dir'];
 				if ( is_array( $installationDir ) ) {
 					$installationDir = empty( $installationDir[$prettyName] ) ? false : $installationDir[$prettyName];
 				}
 			}
 		}
 		$extra = $package->getExtra();
-		if ( ! $installationDir && ! empty( $extra['wordpress-root-install-dir'] ) ) {
-			$installationDir = $extra['wordpress-root-install-dir'];
+		if ( ! $installationDir && ! empty( $extra['wordpress-config-install-dir'] ) ) {
+			$installationDir = $extra['wordpress-config-install-dir'];
 		}
 		if ( ! $installationDir ) {
 			$installationDir = 'wproot';
